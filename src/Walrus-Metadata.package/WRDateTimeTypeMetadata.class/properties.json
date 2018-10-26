@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WRMagnitudeTypeMetadata",
+	"category" : "Walrus-Metadata-Metadata",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRDateTimeTypeMetadata",
+	"type" : "normal"
+}

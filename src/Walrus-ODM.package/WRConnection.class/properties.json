@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Walrus-ODM-Connection",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mongo",
+		"config",
+		"connection"
+	],
+	"name" : "WRConnection",
+	"type" : "normal"
+}

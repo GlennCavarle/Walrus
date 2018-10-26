@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WRAnnotationMapping",
+	"category" : "Walrus-Metadata-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRTestChildObjectMapping",
+	"type" : "normal"
+}

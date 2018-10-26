@@ -1,0 +1,3 @@
+accessing
+beLazy
+	lazy := true

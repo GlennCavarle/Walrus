@@ -1,0 +1,3 @@
+visiting
+visitEmbeddedListMetadata: aMetadata
+	self visitListMetadata: aMetadata

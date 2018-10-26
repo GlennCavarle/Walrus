@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WRUnresolvedObject",
+	"category" : "Walrus-Metadata-ObjectReference",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"resolver"
+	],
+	"name" : "WRLazyUnresolvedObject",
+	"type" : "normal"
+}

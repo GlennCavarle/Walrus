@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WRConnection",
+	"category" : "Walrus-ODM-Tests-Mock",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRConnectionMock",
+	"type" : "normal"
+}

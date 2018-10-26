@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Walrus-ODM-Connection",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"uniqueInstance"
+	],
+	"instvars" : [
+		"config",
+		"connections",
+		"minSize",
+		"maxSize",
+		"currentSize"
+	],
+	"name" : "WRConnectionPool",
+	"type" : "normal"
+}

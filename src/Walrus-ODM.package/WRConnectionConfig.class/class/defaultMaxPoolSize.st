@@ -1,0 +1,3 @@
+configuration
+defaultMaxPoolSize
+	^ 10

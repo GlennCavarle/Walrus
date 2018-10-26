@@ -1,0 +1,3 @@
+adding
+clear
+	data removeAll

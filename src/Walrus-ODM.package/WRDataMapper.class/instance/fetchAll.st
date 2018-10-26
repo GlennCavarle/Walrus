@@ -1,0 +1,3 @@
+operations
+fetchAll
+	^ self fetchBy: {}

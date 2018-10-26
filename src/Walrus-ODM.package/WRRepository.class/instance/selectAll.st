@@ -1,0 +1,3 @@
+operations
+selectAll
+	^ dataMapper fetchAll

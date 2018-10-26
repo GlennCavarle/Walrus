@@ -1,0 +1,13 @@
+{
+	"classtraitcomposition" : "TWRTestWithConnection classTrait",
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRConnectionPoolTest",
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"traitcomposition" : "TWRTestWithConnection",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Walrus-ODM-Tests"
+}

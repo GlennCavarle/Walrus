@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Walrus-Metadata-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"metadataFactory"
+	],
+	"name" : "WRSerializationTest",
+	"type" : "normal"
+}

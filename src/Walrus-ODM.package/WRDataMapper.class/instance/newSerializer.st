@@ -1,0 +1,3 @@
+serialize/materialize
+newSerializer
+	^ WRClassMetadataSerializer metadataFactory: metadataFactory

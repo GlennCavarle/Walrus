@@ -1,0 +1,3 @@
+public
+clearChanges
+	storage clear

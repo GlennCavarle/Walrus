@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Walrus-Metadata-Annotation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pragma"
+	],
+	"name" : "WRAnnotation",
+	"type" : "normal"
+}

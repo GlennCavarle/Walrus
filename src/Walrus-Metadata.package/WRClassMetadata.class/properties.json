@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "WRAbstractMetadata",
+	"category" : "Walrus-Metadata-Metadata",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"collection",
+		"database",
+		"targetClass",
+		"repositoryClass",
+		"constructorBlock",
+		"identifier",
+		"properties"
+	],
+	"name" : "WRClassMetadata",
+	"type" : "normal"
+}

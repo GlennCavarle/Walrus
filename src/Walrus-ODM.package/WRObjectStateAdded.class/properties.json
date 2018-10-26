@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WRObjectStateModified",
+	"category" : "Walrus-ODM-UnitOfWork",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRObjectStateAdded",
+	"type" : "normal"
+}

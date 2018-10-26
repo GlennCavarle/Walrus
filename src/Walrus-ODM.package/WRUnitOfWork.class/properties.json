@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Walrus-ODM-UnitOfWork",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dataMapper",
+		"storage"
+	],
+	"name" : "WRUnitOfWork",
+	"type" : "normal"
+}

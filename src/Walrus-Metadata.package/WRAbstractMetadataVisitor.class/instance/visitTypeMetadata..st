@@ -1,0 +1,3 @@
+visiting types
+visitTypeMetadata: aMetadata
+	

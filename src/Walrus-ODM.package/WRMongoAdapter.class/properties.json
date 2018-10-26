@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WRAdapter",
+	"category" : "Walrus-ODM-Adapter",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"connectionPool"
+	],
+	"name" : "WRMongoAdapter",
+	"type" : "normal"
+}

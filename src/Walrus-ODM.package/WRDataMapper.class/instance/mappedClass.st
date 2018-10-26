@@ -1,0 +1,3 @@
+accessing
+mappedClass
+	^ classMetadata targetClass

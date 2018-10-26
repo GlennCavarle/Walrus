@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Walrus-Metadata-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"id",
+		"text",
+		"category",
+		"tags",
+		"children"
+	],
+	"name" : "WRTestObject",
+	"type" : "normal"
+}

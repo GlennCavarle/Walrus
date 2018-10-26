@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WRMetadataVisitor",
+	"category" : "Walrus-Metadata-Visitor",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRClassMetadataSerializer",
+	"type" : "normal"
+}

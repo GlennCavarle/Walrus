@@ -1,0 +1,3 @@
+accessing
+beEager
+	lazy := false

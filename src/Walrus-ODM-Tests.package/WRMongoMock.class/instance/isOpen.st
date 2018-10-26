@@ -1,0 +1,3 @@
+operations
+isOpen
+	^ isOpen

@@ -1,0 +1,13 @@
+{
+	"classtraitcomposition" : "TWRReferenceResolver classTrait",
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WRTestObjectResolver",
+	"commentStamp" : "",
+	"super" : "Object",
+	"traitcomposition" : "TWRReferenceResolver",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Walrus-Metadata-Tests"
+}
