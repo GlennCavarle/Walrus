@@ -1,3 +1,0 @@
-operations
-open
-	isOpen := true

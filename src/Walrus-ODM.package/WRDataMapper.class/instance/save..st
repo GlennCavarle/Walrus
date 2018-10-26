@@ -1,3 +1,0 @@
-operations
-save: anObject
-	

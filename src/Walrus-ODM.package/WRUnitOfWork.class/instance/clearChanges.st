@@ -1,3 +1,0 @@
-public
-clearChanges
-	storage clear

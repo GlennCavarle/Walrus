@@ -1,3 +1,0 @@
-serialize/materialize
-resolveObject: aUnresolvedObject
-	self explicitRequirement

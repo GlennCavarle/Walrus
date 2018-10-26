@@ -1,3 +1,0 @@
-public
-repository: aRepositoryClass
-	metadata repositoryClass: aRepositoryClass

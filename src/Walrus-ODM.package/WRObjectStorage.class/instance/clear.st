@@ -1,3 +1,0 @@
-adding
-clear
-	data removeAll

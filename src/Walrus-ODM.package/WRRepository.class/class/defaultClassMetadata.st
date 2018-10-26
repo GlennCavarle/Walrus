@@ -1,3 +1,0 @@
-accessing
-defaultClassMetadata
-	^ self subclassResponsibility 

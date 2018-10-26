@@ -1,3 +1,0 @@
-visiting
-visitIdentifierMetadata: aMetadata
-	self visitPropertyMetadata: aMetadata

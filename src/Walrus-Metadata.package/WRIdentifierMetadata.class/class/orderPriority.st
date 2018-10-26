@@ -1,3 +1,0 @@
-configuration
-orderPriority
-	^ 20

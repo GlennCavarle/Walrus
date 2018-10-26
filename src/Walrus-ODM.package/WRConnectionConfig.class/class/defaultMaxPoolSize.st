@@ -1,3 +1,0 @@
-configuration
-defaultMaxPoolSize
-	^ 10

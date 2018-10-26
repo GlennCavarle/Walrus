@@ -1,3 +1,0 @@
-operations
-selectAll
-	^ dataMapper fetchAll

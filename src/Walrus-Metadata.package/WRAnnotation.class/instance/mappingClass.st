@@ -1,3 +1,0 @@
-accessing
-mappingClass
-	^ pragma methodClass

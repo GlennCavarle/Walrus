@@ -1,3 +1,0 @@
-serialize/materialize
-resolveCollection: aUnresolvedCollection
-	self explicitRequirement

@@ -1,3 +1,0 @@
-configuration
-defaultMinPoolSize
-	^ 0

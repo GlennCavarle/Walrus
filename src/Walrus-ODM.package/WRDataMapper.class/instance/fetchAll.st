@@ -1,3 +1,0 @@
-operations
-fetchAll
-	^ self fetchBy: {}

@@ -1,3 +1,0 @@
-accessing
-targetClass
-	^ metadata type
