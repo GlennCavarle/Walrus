@@ -46,5 +46,6 @@ WRClassMetadataFactory >> registerDefaultTypes [
 	cache at: Date name put: (WRDateTypeMetadata targetClass: Date name).
 	cache at: DateAndTime name put: (WRDateTimeTypeMetadata targetClass: DateAndTime name).
 	cache at: UndefinedObject name put: (WRNullTypeMetadata targetClass: UndefinedObject name).
-	cache at: OID name put: (WRIDTypeMetadata targetClass: OID name)
+	cache at: OID name put: (WRIDTypeMetadata targetClass: OID name).
+	cache at: UUID name put: (WRIDTypeMetadata targetClass: UUID name)
 ]

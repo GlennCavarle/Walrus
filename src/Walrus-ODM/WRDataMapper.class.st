@@ -83,9 +83,19 @@ WRDataMapper >> classMetadata [
 	^ classMetadata
 ]
 
+{ #category : #private }
+WRDataMapper >> convertId: anId [
+	^ OID value: (Integer readFrom: anId base: 16)
+]
+
 { #category : #operations }
 WRDataMapper >> delete: anObject [
 	self deleteById: (self idOf: anObject)
+]
+
+{ #category : #operations }
+WRDataMapper >> deleteAll [
+	self deleteBy: Dictionary new
 ]
 
 { #category : #operations }
@@ -97,7 +107,7 @@ WRDataMapper >> deleteBy: criteria [
 
 { #category : #operations }
 WRDataMapper >> deleteById: anId [
-	self deleteBy: {(self idField -> anId)}
+	self deleteBy: {(self idField -> (self convertId:anId))}
 ]
 
 { #category : #operations }
@@ -138,7 +148,7 @@ WRDataMapper >> fetchOneBy: criteria [
 
 { #category : #operations }
 WRDataMapper >> fetchOneById: anId [
-	^ self fetchOneBy: {(self idField -> anId)}
+	^ self fetchOneBy: {(self idField ->  (self convertId:anId))}
 ]
 
 { #category : #accessing }

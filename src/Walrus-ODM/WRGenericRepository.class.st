@@ -46,6 +46,16 @@ WRGenericRepository >> remove: anObject [
 ]
 
 { #category : #operations }
+WRGenericRepository >> removeAll [
+	^ dataMapper deleteAll
+]
+
+{ #category : #operations }
+WRGenericRepository >> removeById: anId [
+	^ dataMapper deleteById: anId
+]
+
+{ #category : #operations }
 WRGenericRepository >> selectAll [
 	^ dataMapper fetchAll
 ]
