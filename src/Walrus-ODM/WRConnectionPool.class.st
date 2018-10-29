@@ -1,8 +1,7 @@
 Class {
 	#name : #WRConnectionPool,
-	#superclass : #Object,
+	#superclass : #WRAbstractConnection,
 	#instVars : [
-		'config',
 		'connections',
 		'minSize',
 		'maxSize',
@@ -56,11 +55,6 @@ WRConnectionPool class >> uniqueInstance [
 ]
 
 { #category : #accessing }
-WRConnectionPool >> config [
-	^ config
-]
-
-{ #category : #accessing }
 WRConnectionPool >> currentSize [
 	^ currentSize
 ]
@@ -85,13 +79,6 @@ WRConnectionPool >> initialize [
 	minSize := self config minPoolSize.
 	maxSize := self config maxPoolSize.
 	self ensurePoolSize
-]
-
-{ #category : #initialization }
-WRConnectionPool >> initializeWithConfig: aMongoConfig [
-	config := aMongoConfig.
-	self initialize.
-	
 ]
 
 { #category : #accessing }

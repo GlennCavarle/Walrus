@@ -16,3 +16,10 @@ TWRTestWithConnection >> newConnectionPoolMockWithSize: aNumber [
 				maxPoolSize: aNumber;
 				yourself)
 ]
+
+{ #category : #tests }
+TWRTestWithConnection >> newDbContext [
+	^ WRDbContext 
+		metadataFactory: WRClassMetadataFactory withAnnotationLoader 
+		connection: self newConnectionPoolMock
+]

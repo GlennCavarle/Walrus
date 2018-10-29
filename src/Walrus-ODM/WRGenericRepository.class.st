@@ -1,26 +1,61 @@
 Class {
 	#name : #WRGenericRepository,
-	#superclass : #WRRepository,
+	#superclass : #Object,
 	#instVars : [
-		'modelClass'
+		'dataMapper'
 	],
 	#category : #'Walrus-ODM-Repository'
 }
 
-{ #category : #accessing }
-WRGenericRepository class >> model: aModelClass [
+{ #category : #'instance creation' }
+WRGenericRepository class >> context: aDbContext metadata: aClassMetadata [
 	^ self basicNew
-		initializeWithModel: aModelClass;
+		initializeWithContext: aDbContext metadata: aClassMetadata;
 		yourself
 ]
 
+{ #category : #'instance creation' }
+WRGenericRepository class >> context: aDbContext modelClass: aClassName [
+	^ self context: aDbContext metadata: (aDbContext classMetadataFor: aClassName)
+]
+
+{ #category : #operations }
+WRGenericRepository >> add: anObject [
+	^ dataMapper insert: anObject
+]
+
 { #category : #initialization }
-WRGenericRepository >> initializeWithModel: aModelClass [ 
-	modelClass := aModelClass.
+WRGenericRepository >> initialize [
+	super initialize
+]
+
+{ #category : #initialization }
+WRGenericRepository >> initializeWithContext: aDbContext metadata: aClassMetadata [
+	dataMapper := WRDataMapper context: aDbContext metadata: aClassMetadata.
 	self initialize
 ]
 
 { #category : #accessing }
 WRGenericRepository >> modelClass [
-	^ modelClass
+	^ dataMapper mappedClass
+]
+
+{ #category : #operations }
+WRGenericRepository >> remove: anObject [
+	^ dataMapper remove: anObject
+]
+
+{ #category : #operations }
+WRGenericRepository >> selectAll [
+	^ dataMapper fetchAll
+]
+
+{ #category : #operations }
+WRGenericRepository >> selectBy: criteria [
+	^ dataMapper fetchOneBy: criteria
+]
+
+{ #category : #operations }
+WRGenericRepository >> selectById: anId [
+	^ dataMapper fetchOneById: anId
 ]

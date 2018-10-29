@@ -11,15 +11,10 @@ Class {
 
 { #category : #tests }
 WRDataMapperTest >> test [
-	|dataMapper con testObjMetadata|
-	testObjMetadata := WRTestObject walrusMetadata.
-	WRClassMetadataRegistry reset.
-	WRClassMetadataRegistry uniqueInstance 
-		registerMetadata: testObjMetadata;
-		registerMetadata: WRTestChildObject walrusMetadata.
+	|dbContext dataMapper|
 	
-	con := self newConnectionPoolMockWithSize: 1.
-	dataMapper := WRDataMapper connection: con metadata: testObjMetadata. 
+	dbContext := self newDbContext.
+	dataMapper := WRDataMapper context: dbContext mappedClass: WRTestObject name. 
 	
 	dataMapper insert: WRTestObject example1.
 	dataMapper fetchAll.

@@ -4,24 +4,21 @@ Class {
 	#traits : 'TWRReferenceResolver',
 	#classTraits : 'TWRReferenceResolver classTrait',
 	#instVars : [
-		'connection',
-		'classMetadata',
-		'metadataFactory'
+		'context',
+		'classMetadata'
 	],
 	#category : #'Walrus-ODM-DataMapper'
 }
 
 { #category : #'instance creation' }
-WRDataMapper class >> connection: aCon metadata: aClassMetadata [
-	^ self basicNew
-		initializeWithConnection: aCon metadata: aClassMetadata;
-		yourself
+WRDataMapper class >> context: aDbContext mappedClass: aClassName [
+	^ self context: aDbContext metadata: (aDbContext classMetadataFor: aClassName)
 ]
 
 { #category : #'instance creation' }
-WRDataMapper class >> for: aClass [
+WRDataMapper class >> context: aDbContext metadata: aClassMetadata [
 	^ self basicNew
-		initializeWithMappedClass: aClass;
+		initializeWithContext: aDbContext metadata: aClassMetadata;
 		yourself
 ]
 
@@ -94,7 +91,7 @@ WRDataMapper >> delete: anObject [
 { #category : #operations }
 WRDataMapper >> deleteBy: criteria [
 	
-	connection withConnection: [ :con | 
+	context withConnection: [ :con | 
 		self basicDeleteBy: criteria connection: con ]
 ]
 
@@ -113,7 +110,7 @@ WRDataMapper >> fetchBy: criteria [
 	| resultSet |
 	resultSet := OrderedCollection new.
 	
-	connection withConnection: [ :con | 
+	context withConnection: [ :con | 
 		resultSet := self basicFetchBy: criteria connection: con ].
 	
 	^ self materializeCollection: resultSet
@@ -123,7 +120,7 @@ WRDataMapper >> fetchBy: criteria [
 WRDataMapper >> fetchByIds: aCollectionOfIds [
 	| resultSet |
 	resultSet := {}.
-	connection withConnection: [ :con | 
+	context withConnection: [ :con | 
 		resultSet := self basicFetchByIds: aCollectionOfIds connection: con ].
 	^ self materializeCollection: resultSet
 ]
@@ -133,7 +130,7 @@ WRDataMapper >> fetchOneBy: criteria [
 	| result |
 	result := nil.
 	
-	connection withConnection: [ :con | 
+	context withConnection: [ :con | 
 		result := self basicFetchOneBy: criteria connection: con ].
 	
 	^ self materialize: result
@@ -160,8 +157,8 @@ WRDataMapper >> initialize [
 ]
 
 { #category : #initialization }
-WRDataMapper >> initializeWithConnection: aCon metadata: aClassMetadata [
-	connection := aCon.
+WRDataMapper >> initializeWithContext: aDbContext metadata: aClassMetadata [
+	context := aDbContext.
 	classMetadata := aClassMetadata.
 	self initialize
 ]
@@ -170,7 +167,7 @@ WRDataMapper >> initializeWithConnection: aCon metadata: aClassMetadata [
 WRDataMapper >> insert: anObject [
 	| rawData |
 	rawData := self serialize: anObject.
-	connection withConnection: [ :con | 
+	context withConnection: [ :con | 
 		self basicInsert: rawData connection: con ]
 ]
 
@@ -203,12 +200,12 @@ WRDataMapper >> newCollectionUsingConnection: con [
 
 { #category : #'serialize/materialize' }
 WRDataMapper >> newMaterializer [
-	^ WRClassMetadataMaterializer metadataFactory: metadataFactory
+	^ WRClassMetadataMaterializer metadataFactory: context metadataFactory
 ]
 
 { #category : #'serialize/materialize' }
 WRDataMapper >> newSerializer [
-	^ WRClassMetadataSerializer metadataFactory: metadataFactory
+	^ WRClassMetadataSerializer metadataFactory: context metadataFactory
 ]
 
 { #category : #operations }
@@ -221,7 +218,7 @@ WRDataMapper >> refresh: anObject [
 { #category : #'serialize/materialize' }
 WRDataMapper >> resolveCollection: anUnresolvedCollection [
 	^ (self class
-			connection: connection
+			context: context
 			metadata: anUnresolvedCollection metadata)
 		fetchByIds: anUnresolvedCollection ids
 ]
@@ -229,7 +226,7 @@ WRDataMapper >> resolveCollection: anUnresolvedCollection [
 { #category : #'serialize/materialize' }
 WRDataMapper >> resolveObject: anUnresolvedObject [
 	^ (self class
-			connection: connection
+			context: context
 			metadata: anUnresolvedObject metadata)
 		fetchOneById: anUnresolvedObject id
 ]
@@ -257,6 +254,6 @@ WRDataMapper >> update: anObject [
 	| rawData criteria|
 	criteria := { self idField -> (self idOf: anObject)}.
 	rawData := self serialize: anObject.
-	connection withConnection: [ :con | 
+	context withConnection: [ :con | 
 		self basicUpdateBy: criteria with: rawData connection: con ]
 ]

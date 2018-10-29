@@ -1,20 +1,12 @@
 Class {
 	#name : #WRConnection,
-	#superclass : #Object,
+	#superclass : #WRAbstractConnection,
 	#instVars : [
 		'mongo',
-		'config',
 		'connection'
 	],
 	#category : #'Walrus-ODM-Connection'
 }
-
-{ #category : #'instance creation' }
-WRConnection class >> config: aMongoConfig [
-	^ self basicNew
-		initializeWithConfig: aMongoConfig;
-		yourself
-]
 
 { #category : #operations }
 WRConnection >> close [
@@ -27,17 +19,20 @@ WRConnection >> databaseNamed: aDatabaseName [
 	^ connection databaseNamed: aDatabaseName
 ]
 
-{ #category : #initialization }
-WRConnection >> initializeInternalConnection [
-	connection := Mongo host: config host port: config port
+{ #category : #private }
+WRConnection >> flush [
+	self close.
 ]
 
 { #category : #initialization }
-WRConnection >> initializeWithConfig: aMongoConfig [
-	config := aMongoConfig.
-	self initialize.
+WRConnection >> initialize [
+	super initialize.
 	self initializeInternalConnection
-	
+]
+
+{ #category : #initialization }
+WRConnection >> initializeInternalConnection [
+	connection := Mongo host: config host port: config port
 ]
 
 { #category : #testing }
