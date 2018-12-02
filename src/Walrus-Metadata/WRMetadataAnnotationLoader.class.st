@@ -17,9 +17,8 @@ WRMetadataAnnotationLoader >> autoloadAllClassMetadata [
 
 { #category : #private }
 WRMetadataAnnotationLoader >> classMetadataAnnotationFor: aClass [
-	^ (WRClassMetadataAnnotation
-		collectFrom: aClass theMetaClass
-		to: Class) first
+	^ (WRClassMetadataAnnotation collectFrom: aClass classSide to: Class)
+		first
 ]
 
 { #category : #public }
@@ -45,6 +44,8 @@ WRMetadataAnnotationLoader >> mappingClassFor: aTargetClass [
 ]
 
 { #category : #private }
-WRMetadataAnnotationLoader >> propertyMetadataAnnotationsFor: aClass [ 
-	^ WRPropertyMetadataAnnotation collectFrom: aClass theMetaClass to: Class
+WRMetadataAnnotationLoader >> propertyMetadataAnnotationsFor: aClass [
+	^ WRPropertyMetadataAnnotation
+		collectFrom: aClass classSide
+		to: Class
 ]

@@ -4,7 +4,7 @@ Class {
 	#category : #'Walrus-Metadata-Annotation'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'pragma helpers' }
 WRPropertyMetadataAnnotation class >> pragmaSelector [
 	^ #walrusPropertyMetadata
 ]
