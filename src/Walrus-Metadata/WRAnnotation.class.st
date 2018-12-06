@@ -42,7 +42,8 @@ WRAnnotation >> metadata [
 
 { #category : #accessing }
 WRAnnotation >> metadataOn: aClass [
-	^ (pragma method valueWithReceiver: aClass arguments: #()) origin: pragma methodClass baseClass name
+	^ (pragma method valueWithReceiver: aClass arguments: #())
+		origin: pragma methodClass instanceSide name
 ]
 
 { #category : #accessing }
