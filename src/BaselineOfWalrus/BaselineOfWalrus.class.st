@@ -18,8 +18,13 @@ BaselineOfWalrus >> baseline: spec [
 		package: #'Walrus-ODM' with: [ spec requires: #(#'Walrus-Metadata' 'MongoTalk') ];
 		
 		package: #'Walrus-Metadata-Tests' with: [ spec requires: #(#'Walrus-Metadata') ];
-		package: #'Walrus-ODM-Tests' with: [ spec requires: #(#'Walrus-ODM') ]
+		package: #'Walrus-ODM-Tests' with: [ spec requires: #(#'Walrus-ODM') ].
 		
+	spec 
+		group: 'Core' with: #(#'Walrus-ODM');
+		group: 'Tests' with: #(#'Walrus-ODM-Tests' #'Walrus-Metadata-Tests');
+		group: 'default' with: #('Core')
+	
 ]
 ]
 
