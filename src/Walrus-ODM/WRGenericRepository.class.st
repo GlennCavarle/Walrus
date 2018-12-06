@@ -1,6 +1,6 @@
 Class {
 	#name : #WRGenericRepository,
-	#superclass : #Object,
+	#superclass : #WRAbstractRepository,
 	#instVars : [
 		'dataMapper'
 	],

@@ -1,5 +1,5 @@
 Class {
 	#name : #WRObjectStateDeleted,
 	#superclass : #WRObjectState,
-	#category : #'Walrus-ODM-UnitOfWork'
+	#category : #'Walrus-ODM-Extra-UnitOfWork'
 }

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'data'
 	],
-	#category : #'Walrus-ODM-UnitOfWork'
+	#category : #'Walrus-ODM-Extra-UnitOfWork'
 }
 
 { #category : #adding }

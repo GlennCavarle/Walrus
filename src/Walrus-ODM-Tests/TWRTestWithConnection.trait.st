@@ -12,7 +12,7 @@ TWRTestWithConnection >> newConnectionPoolMock [
 TWRTestWithConnection >> newConnectionPoolMockWithSize: aNumber [
 	^ WRConnectionPool config:
 			(WRConnectionConfig local
-				connectionClass: WRConnectionMock;
+				connectionClass: WRMockConnection;
 				maxPoolSize: aNumber;
 				yourself)
 ]

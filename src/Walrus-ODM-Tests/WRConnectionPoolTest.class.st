@@ -6,6 +6,15 @@ Class {
 	#category : #'Walrus-ODM-Tests'
 }
 
+{ #category : #mock }
+WRConnectionPoolTest >> newConnectionPoolMockWithSize: aNumber [
+	^ WRConnectionPool config:
+			(WRConnectionConfig local
+				connectionClass: WRMockConnection;
+				maxPoolSize: aNumber;
+				yourself)
+]
+
 { #category : #tests }
 WRConnectionPoolTest >> test [
 	| conPool task1 task2 sem startTime task2StartTime|

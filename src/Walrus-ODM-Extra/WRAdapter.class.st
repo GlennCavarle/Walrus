@@ -1,7 +1,7 @@
 Class {
 	#name : #WRAdapter,
 	#superclass : #Object,
-	#category : #'Walrus-ODM-Adapter'
+	#category : #'Walrus-ODM-Extra-Adapter'
 }
 
 { #category : #'as yet unclassified' }

@@ -6,7 +6,7 @@ Class {
 		'state',
 		'originalValues'
 	],
-	#category : #'Walrus-ODM-UnitOfWork'
+	#category : #'Walrus-ODM-Extra-UnitOfWork'
 }
 
 { #category : #'as yet unclassified' }

@@ -1,49 +1,49 @@
 Class {
-	#name : #WRMongoMock,
+	#name : #WRMockMongo,
 	#superclass : #MongoMock,
 	#instVars : [
 		'isOpen',
 		'inMemoryDatabase'
 	],
-	#category : #'Walrus-ODM-Tests-Mock'
+	#category : #'Walrus-ODM-Testing'
 }
 
 { #category : #operations }
-WRMongoMock >> close [
+WRMockMongo >> close [
 	isOpen := false
 ]
 
 { #category : #private }
-WRMongoMock >> collectionAt: aString [
+WRMockMongo >> collectionAt: aString [
 	^ inMemoryDatabase at: aString ifAbsentPut: [ Dictionary new ]
 ]
 
 { #category : #initialization }
-WRMongoMock >> initialize [
+WRMockMongo >> initialize [
 	super initialize.
 	isOpen := false.
 	inMemoryDatabase := Dictionary new.
 ]
 
 { #category : #operations }
-WRMongoMock >> insert: aCollection collection: aString [
+WRMockMongo >> insert: aCollection collection: aString [
 	| collection |
 	collection := self collectionAt: aString.
 	collection addAll: aCollection
 ]
 
 { #category : #operations }
-WRMongoMock >> isOpen [
+WRMockMongo >> isOpen [
 	^ isOpen
 ]
 
 { #category : #operations }
-WRMongoMock >> open [
+WRMockMongo >> open [
 	isOpen := true
 ]
 
 { #category : #private }
-WRMongoMock >> privateSelect: criteria onCollection: aCollection [
+WRMockMongo >> privateSelect: criteria onCollection: aCollection [
 	| results |
 	results := OrderedCollection new.
 	criteria ifEmpty: [ ^ aCollection asOrderedCollection  ].
@@ -53,7 +53,7 @@ WRMongoMock >> privateSelect: criteria onCollection: aCollection [
 ]
 
 { #category : #operations }
-WRMongoMock >> query: aMongoQuery [
+WRMockMongo >> query: aMongoQuery [
 	| results collection |
 	results := OrderedCollection new.
 	collection := self collectionAt: aMongoQuery qualifiedName.
@@ -62,7 +62,7 @@ WRMongoMock >> query: aMongoQuery [
 ]
 
 { #category : #operations }
-WRMongoMock >> update: origDictionary with: newDictionary collection: aString flags: aFlag [
+WRMockMongo >> update: origDictionary with: newDictionary collection: aString flags: aFlag [
 	| collection |
 	collection := self collectionAt: aString.
 	

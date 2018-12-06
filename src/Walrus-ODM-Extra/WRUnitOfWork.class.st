@@ -5,7 +5,7 @@ Class {
 		'dataMapper',
 		'storage'
 	],
-	#category : #'Walrus-ODM-UnitOfWork'
+	#category : #'Walrus-ODM-Extra-UnitOfWork'
 }
 
 { #category : #public }

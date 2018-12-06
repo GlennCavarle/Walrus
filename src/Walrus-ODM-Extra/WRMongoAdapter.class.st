@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'connectionPool'
 	],
-	#category : #'Walrus-ODM-Adapter'
+	#category : #'Walrus-ODM-Extra-Adapter'
 }
 
 { #category : #private }
