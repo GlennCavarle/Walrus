@@ -12,4 +12,4 @@ smalltalk:
   
 smalltalk_config:
   - .smalltalk.ston
-  - .mongodb.ston
+  - .integration.ston
