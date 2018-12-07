@@ -14,9 +14,11 @@ WRConnection >> close [
 		ifTrue: [ connection close ]
 ]
 
-{ #category : #operations }
+{ #category : #public }
 WRConnection >> databaseNamed: aDatabaseName [
-	^ connection databaseNamed: aDatabaseName
+	<return: #MongoDatabase>
+	
+	^ connection databaseNamed: (aDatabaseName ifNil: [ config database ])
 ]
 
 { #category : #private }
