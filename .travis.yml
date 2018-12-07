@@ -3,17 +3,23 @@ sudo: false
 
 os:
   - linux
-
-smalltalk:
-  - Pharo-alpha
-  - Pharo-stable
-  
+ 
 jobs:
   include:
     - stage: Test
+      smalltalk: Pharo-alpha
       smalltalk_config: .smalltalk.ston
-      
+    - stage: Test
+      smalltalk: Pharo-stable
+      smalltalk_config: .smalltalk.ston
+    
     - stage: Integration
+      smalltalk: Pharo-alpha
+      smalltalk_config: .integration.ston
+      addons:
+        - mongodb
+    - stage: Integration
+      smalltalk: Pharo-stable
       smalltalk_config: .integration.ston
       addons:
         - mongodb
