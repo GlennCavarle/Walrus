@@ -75,11 +75,6 @@ WRConnectionConfig class >> local [
 	^ self  host: 'localhost' port: 27017
 ]
 
-{ #category : #'instance creation' }
-WRConnectionConfig class >> new [ 
-	self error: 'Use #host:port:'
-]
-
 { #category : #accessing }
 WRConnectionConfig >> connectionClass [
 	^ connectionClass ifNil: [ connectionClass := self class defaultConnectionClass ]
@@ -96,8 +91,8 @@ WRConnectionConfig >> database [
 ]
 
 { #category : #accessing }
-WRConnectionConfig >> database: anObject [
-	database := anObject
+WRConnectionConfig >> database: aDbName [
+	database := aDbName
 ]
 
 { #category : #accessing }
@@ -106,8 +101,10 @@ WRConnectionConfig >> host [
 ]
 
 { #category : #accessing }
-WRConnectionConfig >> host: anObject [
-	host := anObject
+WRConnectionConfig >> host: anHost port: aPort [
+	host := anHost.
+	port := aPort
+	
 ]
 
 { #category : #private }
@@ -125,8 +122,8 @@ WRConnectionConfig >> maxPoolSize [
 ]
 
 { #category : #accessing }
-WRConnectionConfig >> maxPoolSize: anObject [
-	maxPoolSize := anObject
+WRConnectionConfig >> maxPoolSize: anInteger [
+	maxPoolSize := anInteger
 ]
 
 { #category : #accessing }
@@ -135,8 +132,8 @@ WRConnectionConfig >> minPoolSize [
 ]
 
 { #category : #accessing }
-WRConnectionConfig >> minPoolSize: anObject [
-	minPoolSize := anObject
+WRConnectionConfig >> minPoolSize: anInteger [
+	minPoolSize := anInteger
 ]
 
 { #category : #accessing }
@@ -145,18 +142,8 @@ WRConnectionConfig >> password [
 ]
 
 { #category : #accessing }
-WRConnectionConfig >> password: anObject [
-	password := anObject
-]
-
-{ #category : #accessing }
 WRConnectionConfig >> port [
 	^ port ifNil: [ Error signal: 'connection port must be defined' ]
-]
-
-{ #category : #accessing }
-WRConnectionConfig >> port: anObject [
-	port := anObject
 ]
 
 { #category : #accessing }
@@ -165,6 +152,7 @@ WRConnectionConfig >> username [
 ]
 
 { #category : #accessing }
-WRConnectionConfig >> username: anObject [
-	username := anObject
+WRConnectionConfig >> username: anUsername password: aPwd [
+	username := anUsername.
+	password := aPwd
 ]
