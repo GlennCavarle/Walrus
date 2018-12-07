@@ -4,12 +4,16 @@ sudo: false
 os:
   - linux
 
-services: mongodb
-
 smalltalk:
   - Pharo-alpha
   - Pharo-stable
   
-smalltalk_config:
-  - .smalltalk.ston
-  - .integration.ston
+jobs:
+  include:
+    - stage: Test
+      smalltalk_config: .smalltalk.ston
+      
+    - stage: Integration
+      smalltalk_config: .integration.ston
+      addons:
+        - mongodb
