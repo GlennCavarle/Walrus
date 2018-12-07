@@ -23,6 +23,7 @@ BaselineOfWalrus >> baseline: spec [
 	spec 
 		group: 'Core' with: #(#'Walrus-ODM');
 		group: 'Tests' with: #(#'Walrus-ODM-Tests' #'Walrus-Metadata-Tests');
+		group: 'IntegrationTests' with: #(#'Walrus-ODM-ITests');
 		group: 'default' with: #('Core')
 	
 ]
