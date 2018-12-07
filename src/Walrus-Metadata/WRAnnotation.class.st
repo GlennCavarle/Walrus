@@ -7,12 +7,12 @@ Class {
 	#category : #'Walrus-Metadata-Annotation'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'pragma helpers' }
 WRAnnotation class >> allPragmaSelectors [
 	^ {self pragmaSelector} , (self allSubclasses collect: [ :each | each pragmaSelector ])
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'pragma helpers' }
 WRAnnotation class >> collectFrom: startClass to: endClass [
 	^ (Pragma allNamed: self pragmaSelector from: startClass to: endClass)
 		collect: [ :each | self fromPragma: each ]
@@ -25,7 +25,7 @@ WRAnnotation class >> fromPragma: aPragma [
 		yourself
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'pragma helpers' }
 WRAnnotation class >> pragmaSelector [
 	^ #walrus
 ]

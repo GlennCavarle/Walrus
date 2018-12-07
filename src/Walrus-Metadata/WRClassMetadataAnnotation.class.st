@@ -4,7 +4,7 @@ Class {
 	#category : #'Walrus-Metadata-Annotation'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'pragma helpers' }
 WRClassMetadataAnnotation class >> collectAllFor: aTargetClass [
 	^ PragmaCollector new 
 		filter: [ :eachPragma | 
@@ -13,7 +13,7 @@ WRClassMetadataAnnotation class >> collectAllFor: aTargetClass [
 		collect: [ :each| self fromPragma: each ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'pragma helpers' }
 WRClassMetadataAnnotation class >> pragmaSelector [
 	^ #walrusClassMetadataFor:
 ]
