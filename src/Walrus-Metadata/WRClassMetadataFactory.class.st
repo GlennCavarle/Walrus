@@ -8,10 +8,17 @@ Class {
 	#category : #'Walrus-Metadata-Util'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'instance creation' }
 WRClassMetadataFactory class >> withAnnotationLoader [
 	^ self basicNew
 		initializeWithAnnotationLoader;
+		yourself
+]
+
+{ #category : #'instance creation' }
+WRClassMetadataFactory class >> withClassMethodLoader [
+	^ self basicNew
+		initializeWithClassMethodLoader;
 		yourself
 ]
 
@@ -30,6 +37,12 @@ WRClassMetadataFactory >> initialize [
 { #category : #initialization }
 WRClassMetadataFactory >> initializeWithAnnotationLoader [
 	loader := WRMetadataAnnotationLoader new.
+	self initialize
+]
+
+{ #category : #initialization }
+WRClassMetadataFactory >> initializeWithClassMethodLoader [
+	loader := WRMetadataClassMethodLoader new.
 	self initialize
 ]
 

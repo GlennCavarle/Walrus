@@ -1,6 +1,6 @@
 Class {
 	#name : #WRMetadataAnnotationLoader,
-	#superclass : #Object,
+	#superclass : #WRAbstractMetadataLoader,
 	#category : #'Walrus-Metadata-Loader'
 }
 
