@@ -6,5 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 WRAnnotationMapping class >> createMetadata [
-	^ WRMetadataAnnotationLoader new metadataFromMappingClass: self
+	^ WRMetadataAnnotationLoader new loadClassMetadataFromMapping: self
 ]
