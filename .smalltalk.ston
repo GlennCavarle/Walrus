@@ -1,0 +1,18 @@
+SmalltalkCISpec {
+  #name : 'Default',
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Walrus',
+      #directory : 'src',
+      #load : [ 'Tests' ],
+      #platforms : [ #pharo ]
+    }
+  ],
+  #testing : {
+      #packages : [ 'Walrus.*' ],
+      #coverage : {
+        #packages : [ 'Walrus.*' ]
+      }
+  }
+}
+
