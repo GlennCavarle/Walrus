@@ -4,9 +4,12 @@ sudo: false
 os:
   - linux
 
+services: mongodb
+
 smalltalk:
   - Pharo-alpha
   - Pharo-stable
   
 smalltalk_config:
   - .smalltalk.ston
+  - .mongodb.ston
