@@ -1,6 +1,9 @@
 Class {
 	#name : #WRRepositoryITest,
 	#superclass : #TestCase,
+	#instVars : [
+		'repository'
+	],
 	#category : #'Walrus-ODM-ITests'
 }
 
@@ -19,12 +22,16 @@ WRRepositoryITest >> newConnectionPoolWithSize: aNumber [
 				yourself)
 ]
 
-{ #category : #tests }
-WRRepositoryITest >> test [
-	| repo |
-	repo := WRGenericRepository 
+{ #category : #running }
+WRRepositoryITest >> setUp [
+	repository := WRGenericRepository 
 		context: self createDbContext 
 		modelClass: WRTestObject name.
+]
+
+{ #category : #tests }
+WRRepositoryITest >> test [
 	
-	repo selectAll.
+	repository add: WRTestObject example1.
+	self assert: repository selectAll size equals: 1.
 ]
