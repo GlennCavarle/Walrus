@@ -16,10 +16,10 @@ jobs:
     - stage: Integration
       smalltalk: Pharo-alpha
       smalltalk_config: .integration.ston
-      addons:
+      services:
         - mongodb
     - stage: Integration
       smalltalk: Pharo-stable
       smalltalk_config: .integration.ston
-      addons:
+      services:
         - mongodb
